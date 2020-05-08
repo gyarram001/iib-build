@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu May 07 21:59:35 GMT 2020
+RepoPath/.error=Could not transfer artifact org.apache.maven.plugins\:maven-source-plugin\:pom\:2.4 from/to central (RepoPath)\: Cannot access RepoPath with type default using the available connector factories\: BasicRepositoryConnectorFactory
+http\://tstwp1apar2\:8081/nexus/content/groups/public/.error=Could not transfer artifact org.apache.maven.plugins\:maven-source-plugin\:pom\:2.4 from/to central (http\://tstwp1apar2\:8081/nexus/content/groups/public/)\: Transfer failed for http\://tstwp1apar2\:8081/nexus/content/groups/public/org/apache/maven/plugins/maven-source-plugin/2.4/maven-source-plugin-2.4.pom
+@default-central-http\://tstwp1apar2\:8081/nexus/content/groups/public/.lastUpdated=1588888775403
+@default-central-RepoPath/.lastUpdated=1588888700626

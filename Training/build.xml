@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project" default="run">
+ <target name="run" description="">
+  <antcall target="mqsideploybar" />
+ </target>
+
+ <!--Target to build the broker archive using mqsipackagebar-->
+ <target name="mqsicreatebar.buildbar">
+  <echo message="Building Broker Archive file: ${APP.NAME}-${BUILD.NUMBER}.bar " />
+  <exec executable="${IIB.CREATEBAR}\mqsipackagebar.bat" spawn="false">
+   <arg value="-w" />
+   <arg value="${IIB.WORKSPACE}" />
+   <arg value="-a" />
+   <arg value="${BARDIR}\${APP.NAME}-${BUILD.NUMBER}.bar" />
+   <arg value="-k" />
+   <arg value="${APP.NAME}" />
+  </exec>
+  <echo message="Completed building Broker Archive file - ${APP.NAME}-${BUILD.NUMBER}.bar " />
+ </target>
+
+ <!--Target to deploy the broker archive using mqsideploybar-->
+ <target name="mqsideploybar" depends="mqsicreatebar.buildbar">
+  <echo message="Deploying Broker Archive file: ${APP.NAME}-${BUILD.NUMBER}.bar " />
+  <exec executable="${IIB.DEPLOYBAR}\mqsideployscript.bat" spawn="false">
+   <arg value="${IIB.RUNTIME}" />
+   <arg value="-e" />
+   <arg value="${IIB.EG}" />
+   <arg value="-a" />
+   <arg value="${BARDIR}\${APP.NAME}-${BUILD.NUMBER}.bar" />
+  </exec>
+  <echo message="Completed building Broker Archive file - ${APP.NAME}-${BUILD.NUMBER}.bar " />
+ </target>
+</project>
